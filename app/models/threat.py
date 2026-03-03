@@ -8,6 +8,10 @@ class ThreatSource(BaseModel):
 
     name = db.Column(db.String(150), unique=True, nullable=False)
     description = db.Column(db.Text, nullable=True)
+    threat_category = db.Column(db.String(50), nullable=False)  # e.g., Adversarial, Non-adversarial
+    initiation_type = db.Column(db.String(50), nullable=False)  # e.g., Threat Event Initiation, Threat Event Occurrence
+    actor = db.Column(db.String(50), nullable=False)  # e.g., Adversary, Error/Accident/Act of Nature
+    action = db.Column(db.String(20), nullable=False)  # e.g., initiated, occured
 
     # Relationship
     assessment_threats = db.relationship("AssessmentThreat", backref="threat_source", lazy=True)
