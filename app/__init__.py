@@ -20,6 +20,8 @@ def create_app(config_class=Config):
         AssetCrownJewels,
         PolicyRegulation,
         AssessmentPolicyRegulation,
+        Vulnerability,
+        AssessmentVulnerability,
     )
 
     # from app import routes
