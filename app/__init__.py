@@ -13,7 +13,14 @@ def create_app(config_class=Config):
     migrate.init_app(app, db)
 
     # Import models so they're registered with db
-    from app.models import Demographics, GlobalProcess, ProcessLevel, AssetCrownJewels
+    from app.models import (
+        Demographics,
+        GlobalProcess,
+        ProcessLevel,
+        AssetCrownJewels,
+        PolicyRegulation,
+        AssessmentPolicyRegulation,
+    )
 
     # from app import routes
     # app.register_blueprint(routes.bp)
