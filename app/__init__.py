@@ -22,6 +22,8 @@ def create_app(config_class=Config):
         AssessmentPolicyRegulation,
         Vulnerability,
         AssessmentVulnerability,
+        ThreatSource,
+        AssessmentThreat,
     )
 
     # from app import routes

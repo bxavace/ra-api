@@ -4,6 +4,7 @@ from flask.cli import with_appcontext
 from app.seeders.seed_choices import seed_choices
 from app.seeders.seed_policies import seed_policies
 from app.seeders.seed_vulnerabilities import seed_vulnerabilities
+from app.seeders.seed_threats import seed_threats
 
 
 @click.command("seed:choices")
@@ -27,6 +28,13 @@ def seed_vulnerabilities_command():
     seed_vulnerabilities()
 
 
+@click.command("seed:threats")
+@with_appcontext
+def seed_threats_command():
+    """Populate threat source table with placeholder data."""
+    seed_threats()
+
+
 @click.command("seed:all")
 @with_appcontext
 def seed_all_command():
@@ -34,6 +42,7 @@ def seed_all_command():
     seed_choices()
     seed_policies()
     seed_vulnerabilities()
+    seed_threats()
     print("✓ All seeders executed.")
 
 
@@ -42,4 +51,5 @@ def register_cli_commands(app):
     app.cli.add_command(seed_choices_command)
     app.cli.add_command(seed_policies_command)
     app.cli.add_command(seed_vulnerabilities_command)
+    app.cli.add_command(seed_threats_command)
     app.cli.add_command(seed_all_command)

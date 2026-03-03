@@ -4,6 +4,7 @@ from app.models.choices import GlobalProcess, ProcessLevel, AssetCrownJewels
 from app.models.demographics import Demographics
 from app.models.policy import PolicyRegulation, AssessmentPolicyRegulation
 from app.models.vulnerability import Vulnerability, AssessmentVulnerability
+from app.models.threat import ThreatSource, AssessmentThreat
 
 __all__ = [
     "db",
@@ -16,4 +17,6 @@ __all__ = [
     "AssessmentPolicyRegulation",
     "Vulnerability",
     "AssessmentVulnerability",
+    "ThreatSource",
+    "AssessmentThreat",
 ]
