@@ -37,7 +37,7 @@ IMPACT_MATRIX = {
 ORDINAL_EFFECT_DESC = {
     "completely nonexistent": "The threat event could be expected to have no adverse effect whatsoever on organizational operations, organizational assets, organizational reputation, or a client organization.",
     "limited": "The threat event could be expected to have a limited adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
-    "negligible": "The threat event could be expected to have multiple severe or catastrophic adverse effects on organizational operations, organizational assets, organizational reputation, or a client organization.",
+    "negligible": "The threat event could be expected to have a negligible adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
     "serious": "The threat event could be expected to have a serious adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
     "severe or catastrophic": "The threat event could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
     "multiple severe or catastrophic": "The threat event could be expected to have multiple severe or catastrophic adverse effects on organizational operations, organizational assets, organizational reputation, or a client organization.",
