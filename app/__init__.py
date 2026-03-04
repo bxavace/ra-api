@@ -25,6 +25,10 @@ def create_app(config_class=Config):
         ThreatSource,
         AssessmentThreat,
         AssessmentThreatProbability,
+        ImpactCategory,
+        AssessmentImpact,
+        RiskResponse,
+        InitialRisk,
     )
 
     # from app import routes
