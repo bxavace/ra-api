@@ -6,6 +6,8 @@ from app.models.policy import PolicyRegulation, AssessmentPolicyRegulation
 from app.models.vulnerability import Vulnerability, AssessmentVulnerability
 from app.models.threat import ThreatSource, AssessmentThreat
 from app.models.probability import AssessmentThreatProbability
+from app.models.impact import ImpactCategory, AssessmentImpact
+from app.models.risk import RiskResponse, InitialRisk
 
 __all__ = [
     "db",
@@ -21,4 +23,8 @@ __all__ = [
     "ThreatSource",
     "AssessmentThreat",
     "AssessmentThreatProbability",
+    "ImpactCategory",
+    "AssessmentImpact",
+    "RiskResponse",
+    "InitialRisk",
 ]
