@@ -41,3 +41,13 @@ RISK_TABLE =[
     {"Total Probability": "Very Low", "Impact": "Very High", "Concat.": "Very LowVery High", "Risk": "Low"},
     {"Total Probability": "Very Low", "Impact": "Very Low", "Concat.": "Very LowVery Low", "Risk": "Very Low"}
 ]
+
+
+IMPACT_STATEMENT = {
+    "high": "The threat event could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
+    "low": "The threat event could be expected to have a limited adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
+    "moderate": "The threat event could be expected to have a serious adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
+    "very high": "The threat event could be expected to have multiple severe or catastrophic adverse effects on organizational operations, organizational assets, organizational reputation, or a client organization.",
+    "very low": "The threat event could be expected to have a negligible adverse effect on organizational operations, organizational assets, organizational reputation, or a client organization.",
+    "none": "The threat event could be expected to have no adverse effect whatsoever on organizational operations, organizational assets, organizational reputation, or a client organization."
+}

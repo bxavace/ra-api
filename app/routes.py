@@ -5,7 +5,7 @@ from app.models import (
     ThreatSource, ImpactCategory, RiskResponse
 )
 from app.constants.impact_matrix import IMPACT_MATRIX, ORDINAL_EFFECT_DESC
-from app.constants.risk_table import RISK_TABLE
+from app.constants.risk_table import RISK_TABLE, IMPACT_STATEMENT
 from app.constants.probability_table import PROBABILITY_TABLE
 
 bp = Blueprint("api", __name__, url_prefix="/api")
@@ -49,5 +49,6 @@ def get_metadata():
         "impact_matrix": IMPACT_MATRIX,
         "ordinal_effect_description": ORDINAL_EFFECT_DESC,
         "risk_table": RISK_TABLE,
+        "impact_statement": IMPACT_STATEMENT,
         "probability_table": PROBABILITY_TABLE
     }
