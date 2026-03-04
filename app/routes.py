@@ -4,8 +4,9 @@ from app.models import (
     GlobalProcess, ProcessLevel, AssetCrownJewels, PolicyRegulation, Vulnerability,
     ThreatSource, ImpactCategory, RiskResponse
 )
-from app.constants.impact_matrix import IMPACT_MATRIX
+from app.constants.impact_matrix import IMPACT_MATRIX, ORDINAL_EFFECT_DESC
 from app.constants.risk_table import RISK_TABLE
+from app.constants.probability_table import PROBABILITY_TABLE
 
 bp = Blueprint("api", __name__, url_prefix="/api")
 
@@ -46,5 +47,7 @@ def get_metadata():
             {"id": x.id, "name": x.name, "guidance": x.guidance} for x in RiskResponse.query.all()
         ],
         "impact_matrix": IMPACT_MATRIX,
+        "ordinal_effect_description": ORDINAL_EFFECT_DESC,
         "risk_table": RISK_TABLE,
+        "probability_table": PROBABILITY_TABLE
     }
