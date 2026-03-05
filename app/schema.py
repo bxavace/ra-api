@@ -28,7 +28,9 @@ class ThreatSchema(Schema):
     mitigation_summary = fields.String(allow_none=True)
 
 class ThreatProbabilitySchema(Schema):
-    assessment_threat_id = fields.Integer(required=True)
+    # Frontend sends threat_source_id; the service resolves the DB assessment_threat_id
+    # via the threat_id_map built during threat insertion.
+    threat_source_id = fields.Integer(required=True)
     probability = fields.String(required=True)
     justification = fields.String(allow_none=True)
     impact_probability = fields.String(required=True)

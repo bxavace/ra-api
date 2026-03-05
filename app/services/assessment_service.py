@@ -7,11 +7,12 @@ from sqlalchemy.exc import SQLAlchemyError
 from app.schema import AssessmentSubmissionSchema
 
 def create_assessment(data):
-    # Validate input
+    # Validate and deserialize input (load() returns proper Python types, e.g. date objects)
     schema = AssessmentSubmissionSchema()
-    errors = schema.validate(data)
-    if errors:
-        return {"success": False, "error": errors}
+    try:
+        data = schema.load(data)
+    except Exception as exc:
+        return {"success": False, "error": exc.messages if hasattr(exc, "messages") else str(exc)}
     try:
         # 1. Demographics
         demo_data = data["demographics"]
@@ -52,8 +53,13 @@ def create_assessment(data):
 
         # 5. Threat Probabilities
         for tp in data.get("threat_probabilities", []):
+            at_id = threat_id_map.get(tp["threat_source_id"])
+            if at_id is None:
+                raise KeyError(
+                    f"No matching threat found for threat_source_id={tp['threat_source_id']}"
+                )
             db.session.add(AssessmentThreatProbability(
-                assessment_threat_id=tp["assessment_threat_id"],
+                assessment_threat_id=at_id,
                 probability=tp["probability"],
                 justification=tp.get("justification"),
                 impact_probability=tp["impact_probability"],
